@@ -89,7 +89,7 @@ s:author:
     s:name: Marie-Dominique Devignes
 
 # s:citation: doi
-s:codeRepository: https://gitlab.inria.fr/hdhondge/rrm_diversity_cwl
+s:codeRepository: https://gitlab.inria.fr/capsid.public_codes/CroMaSt
 s:dateCreated: "2022-08-01"
 s:license: https://mit-license.org/
 
