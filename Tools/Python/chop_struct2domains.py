@@ -30,7 +30,8 @@ class PDButil:
         """
         url = 'https://files.rcsb.org/download/' + self.pdb_code + '.pdb.gz'
         wget.download(url, out=self.dir_pdb)
-        gunzip(os.path.join(self.dir_pdb, self.pdb_code + '.pdb.gz'))
+        if not os.path.join(self.dir_pdb, self.pdb_code + '.pdb') in os.listdir(self.dir_pdb):
+            gunzip(os.path.join(self.dir_pdb, self.pdb_code + '.pdb.gz'))
 
     def get_cif_file(self):
         """

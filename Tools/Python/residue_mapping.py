@@ -70,7 +70,8 @@ class ResidueMapper():
         # prev_url = 'ftp://ftp.ebi.ac.uk/pub/databases/msd/sifts/xml/'+pdb_code.upper()+'.xml.gz'
         url = 'https://ftp.ebi.ac.uk/pub/databases/msd/sifts/xml/' + pdb_code.lower() + '.xml.gz'
         wget.download(url, out=self.path)
-        gunzip(os.path.join(self.path, pdb_code.lower() + '.xml.gz'))
+        if not os.path.join(self.path, pdb_code.lower() + '.xml') in os.listdir(self.path):
+            gunzip(os.path.join(self.path, pdb_code.lower() + '.xml.gz'))
 
     def gather_residues_xml(self, pdb=None):
         """

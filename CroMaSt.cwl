@@ -564,6 +564,18 @@ outputs:
     format: edam:format_3752
     outputSource: unmapped_from_cath/failed_domains_list
 
+  crossmap_pfam:
+    label: Pfam domin StIs cross-mapped to CATH family-wise
+    type: File[]
+    format: edam:format_3464
+    outputSource: crossmapping_Pfam2CATH/pfam_crossmapped
+
+  crossmap_cath:
+    label: CATH domain StIs cross-mapped to Pfam family-wise
+    type: File[]
+    format: edam:format_3464
+    outputSource: crossmapping_CATH2Pfam/cath_crossmapped
+
   # unique_pfam:
   #   label: Pfam domain StIs that are not in list of CATH domain StIs
   #   type: File
@@ -575,18 +587,6 @@ outputs:
   #   type: File
   #   format: edam:format_3752
   #   outputSource: compare_instances_CATH_Pfam/cath_unique
-
-  # crossmap_pfam:
-  #   label: Pfam domin StIs cross-mapped to CATH family-wise
-  #   type: File[]
-  #   format: edam:format_3464
-  #   outputSource: crossmapping_Pfam2CATH/pfam_crossmapped
-
-  # crossmap_cath:
-  #   label: CATH domain StIs cross-mapped to Pfam family-wise
-  #   type: File[]
-  #   format: edam:format_3464
-  #   outputSource: crossmapping_CATH2Pfam/cath_crossmapped  
 
 
 s:author:
