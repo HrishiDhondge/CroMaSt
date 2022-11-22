@@ -14,6 +14,19 @@ class Pfam2pdb:
         self.sifts = sifts_path
         self.lost_file = lost
 
+    @staticmethod
+    def one_res_map(total_res, unp_id, unp_start):
+        """
+        This function adds the tuple to resmapped list,
+        if only one residue is found from given residue positions
+        """
+        tmp_addon = ('UniProt', unp_id, 'null', 'null', 'PDB', total_res[0][-4], total_res[0][-3], 'null', 'null')
+        if int(total_res[0][2]) == int(unp_start):
+            total_res = [total_res[0], tmp_addon]
+        else:
+            total_res = [tmp_addon, total_res[0]]
+        return total_res
+
     def mapping_pfam2pdb(self):
         """
         Main function mapping the residue numbering from a dataframe.
@@ -38,7 +51,11 @@ class Pfam2pdb:
             tot = M.resmapper_unp2pdb(pdb=entry[0], chain=entry[1])
             all_good = True
             x_factor = [None, 'null']
-            while(len(tot) < 1) or (tot[0][-2] in x_factor or tot[1][-2] in x_factor):
+
+            if len(tot) == 1:
+                tot = self.one_res_map(tot, entry[4], entry[-2])
+
+            while(len(tot) < 1) or ((tot[0][-2] in x_factor) or (tot[1][-2] in x_factor)):
                 # loop for calling the same function within
                 if M.res_pos[0] >= M.res_pos[1]:
                     all_good = False
@@ -61,11 +78,16 @@ class Pfam2pdb:
                         tot = M.resmapper_unp2pdb(pdb=entry[0], chain=entry[1])
                     except:
                         continue
+    
+                if len(tot) == 1:
+                    tot = self.one_res_map(tot, entry[4], entry[-2])
 
             if not all_good:
                 lost_pfam.append(','.join(entry))
                 continue
 
+            entry[-2] = tot[0][2]
+            entry[-1] = tot[1][2]
             entry.extend([tot[0][-2], tot[1][-2]])
             result_df.loc[len(result_df)] = entry
 
