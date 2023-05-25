@@ -72,17 +72,13 @@ class PDButil:
         """
         Assigns a single letter to the target chain, as only first letter of original id.
         """
-        for chain in structure.get_chains():
-            if chain.id != chain_id[0]:
-                continue
-            chain.id = chain_id[-1]
-
-        for chain in structure.get_chains():
-            if chain.id != chain_id:
-                continue
-            chain.id = chain_id[0]
-
-            return structure, chain_id[0]
+        structure = structure[0] # first model
+        try: # Remove chain with first letter or target chain
+            structure.detach_child(chain_id[0])
+        except:
+            print('chain does not exist')
+        structure[chain_id].id = chain_id[0]
+        return structure, chain_id[0]
 
 
 class UtilityDir:
