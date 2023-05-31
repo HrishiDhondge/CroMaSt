@@ -76,7 +76,7 @@ class PDButil:
         try: # Remove chain with first letter or target chain
             structure.detach_child(chain_id[0])
         except:
-            print('chain does not exist')
+            pass
         structure[chain_id].id = chain_id[0]
         return structure, chain_id[0]
 
