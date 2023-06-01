@@ -59,11 +59,13 @@ class PDButil:
             wholepdb = os.path.join(self.dir_pdb, self.pdb_code + '.cif')
             stparse = bpdb.MMCIFParser().get_structure('temp', wholepdb)
 
+        inop = bpdb.PDBIO()
+
         if len(chain_id) > 1:
             stparse, chain_id = self.multi_letter_chains(stparse, chain_id)
-
-        inop = bpdb.PDBIO()
-        inop.set_structure(stparse)
+            inop.set_structure(stparse[chain_id])
+        else:
+            inop.set_structure(stparse[0][chain_id])
         inop.save(chopped, ResSelect())
         return chopped
 
@@ -72,13 +74,13 @@ class PDButil:
         """
         Assigns a single letter to the target chain, as only first letter of original id.
         """
-        structure = structure[0] # first model
+        model_first = structure[0] # first model
         try: # Remove chain with first letter or target chain
-            structure.detach_child(chain_id[0])
+            model_first.detach_child(chain_id[0])
         except:
             pass
-        structure[chain_id].id = chain_id[0]
-        return structure, chain_id[0]
+        model_first[chain_id].id = chain_id[0]
+        return model_first, chain_id[0]
 
 
 class UtilityDir:
