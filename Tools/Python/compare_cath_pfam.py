@@ -52,8 +52,8 @@ class ComparingStructures:
                     matched_pfam.append(j)
                     common = True
                     break
-                elif (int(one_pfam[-2]) > int(one_cath[-2])) and (
-                        int(one_pfam[-1]) < int(one_cath[-1])):
+                elif (one_cath[-3] == one_pfam[-3]) and (int(one_pfam[-2]) > int(one_cath[-2])) \
+                    and (int(one_pfam[-1]) < int(one_cath[-1])):
                     tmp_dict = {'Pfam': ','.join(one_pfam), 'CATH': ','.join(one_cath)}
                     self.true_domain[num_true] = tmp_dict
                     num_true += 1

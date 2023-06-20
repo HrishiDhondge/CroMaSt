@@ -61,7 +61,7 @@ outputs:
     type: Directory
     label: Data directory with all input data 
     outputBinding:
-      glob: Data
+      glob: $(inputs.data_directory)
 
 
 baseCommand:

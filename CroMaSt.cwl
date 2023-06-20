@@ -10,7 +10,7 @@ inputs:
     label: CATH family ids
     type: string[]?
   iteration:
-    label: Iteration number
+    label: Iteration number starting from 0
     type: int
   filename:
     label: Filename to store family ids per iteration

@@ -52,7 +52,11 @@ class ResidueMapper():
         :return: list of tuples :[('1B7F', 'A', 'P19339'), ('1B7F', 'B', 'P19339')]
         """
         url = "https://www.ebi.ac.uk/pdbe/api/mappings/all_isoforms/" + self.src_id
-        data_dict = json.loads(urlopen(url).read())[self.src_id.lower()]['UniProt']
+        try:
+            data_dict = json.loads(urlopen(url).read())[self.src_id.lower()]['UniProt']
+        except:
+            new_dict = []
+            return new_dict
         new_dict = []
         for unp in list(data_dict.keys()):
             if '-' in unp:

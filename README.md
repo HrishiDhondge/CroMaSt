@@ -78,7 +78,7 @@ cath: ['3.30.70.330']
 ## Data files used in current version are as follows:
 **Files in Data directory can be downloaded as follows**:
 
-1. File used from Pfam database: [pdbmap.gz](http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam33.0/pdbmap.gz)  
+1. File used from Pfam database: [pdbmap.gz](http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/pdbmap.gz)
 
 2. File used from CATH database: [cath-domain-description-file.txt](ftp://orengoftp.biochem.ucl.ac.uk:21/cath/releases/latest-release/cath-classification-data/cath-domain-description-file.txt)  
 
@@ -86,8 +86,8 @@ cath: ['3.30.70.330']
 [obsolete_PDB_entry_ids.txt](https://data.rcsb.org/rest/v1/holdings/removed/entry_ids)  
 
 
-CATH Version - 4.3.0 (Ver_Date - 11-Sep-2019) [FTP site](ftp://orengoftp.biochem.ucl.ac.uk/cath/releases/latest-release/cath-classification-data/)  
-Pfam Version - 33.0 (Ver_Date - 18-Mar-2020) [FTP site](http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam33.0/)  
+CATH Version - 4.3.0 (Ver_Date - 11-Sep-2019) [FTP site](ftp://orengoftp.biochem.ucl.ac.uk/cath/releases/latest-release/cath-classification-data/)
+Pfam Version - 35.0 (Ver_Date - November-2021) [FTP site](http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/)
 
 ## Reference
 ```
@@ -98,4 +98,3 @@ Poster -
 
 ## Acknowledgements
 This  project  has  received  funding  from  the  Marie  Skłodowska-Curie Innovative Training Network (MSCA-ITN) RNAct supported by European Union’s Horizon 2020 research and innovation programme under granta greement No 813239.
-
