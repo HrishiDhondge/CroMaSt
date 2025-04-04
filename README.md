@@ -1,6 +1,9 @@
+<a href="https://www.doi.org/10.1093/bioadv/vbad081" target="_parent"><img src="https://img.shields.io/badge/DOI-10.1093/bioadv/vbad081-blue?logo=doi" alt="DOI"/></a>
+<a href="https://workflowhub.eu/workflows/390" target="_parent"><img src="https://img.shields.io/badge/WorkflowHub-390-blue?logo=commonworkflowlanguage" alt="Workflow at WorkflowHub"/></a>
+
 # CroMaSt: A workflow for domain family curation through cross-mapping of structural instances between protein domain databases
 
-CroMaSt (<span style="color:red">**Cro**</span>ss <span style="color:red">**Ma**</span>pper of domain <span style="color:red">**St**</span>ructural instances) is an automated iterative workflow to clarify domain definition by cross-mapping of domain structural instances between domain databases. CroMaSt (for Cross-Mapper of domain Structural instances) will classify all structural instances of a given domain type into 3 different categories (core, true and domain-like). 
+CroMaSt (<span style="color:red">**Cro**</span>ss <span style="color:red">**Ma**</span>pper of domain <span style="color:red">**St**</span>ructural instances) is an automated iterative workflow to clarify domain definition by cross-mapping of domain structural instances between domain databases. CroMaSt (for Cross-Mapper of domain Structural instances) will classify all structural instances of a given domain type into 3 different categories (core, true, and domain-like). 
 
 
 ## Requirements
@@ -25,7 +28,7 @@ conda env create --file yml/environment.yml
 conda activate CroMaSt
 ```
 
-3. Change the path of variables in paramter file
+3. Change the path of variables in the parameter file
 ```
 sed -i 's/\/home\/hdhondge\/CroMaSt\//\/YOUR\/PATH\/TO_CroMaSt\//g' yml/CroMaSt_input.yml 
 ```
@@ -49,7 +52,7 @@ Run the workflow -
 cwl-runner --parallel  --outdir=Results/  CroMaSt.cwl yml/CroMaSt_input.yml
 ```
 
-### 2.  Once the iteration is complete, check the `new_param.yml` file from the `outputdir` (Results), if there is any family identifier in either `pfam` or `cath`; run the next iteration using following command (Until there is no new families explored by workflow) -
+### 2.  Once the iteration is complete, check the `new_param.yml` file from the `outputdir` (Results), if there is any family identifier in either `pfam` or `cath`; run the next iteration using following command (Until there is no new families explored by the workflow) -
 
 ```
 cwl-runner --parallel  --outdir=Results/  CroMaSt.cwl Results/new_param.yml
@@ -64,10 +67,10 @@ cath: ['3.30.70.330']
 
 - **Pro Tip**: Don't forget to give different path to `--outdir` option while running the workflow multiple times or at least move the results to some other location after first run.
 
-## Run the workflow for protein domain of your choice  
-### 1. You can run the workflow for the domain of your choice by simply changing the family identifers in `yml/CroMaSt_input.yml` file.
+## Run the workflow for the protein domain of your choice  
+### 1. You can run the workflow for the domain of your choice by simply changing the family identifiers in the `yml/CroMaSt_input.yml` file.
 
-Simply replace the following values of family identifiers (for pfam and cath) with the family identifiers of your choice in `yml/CroMaSt_input.yml` file. 
+Simply replace the following values of family identifiers (for pfam and cath) with the family identifiers of your choice in the `yml/CroMaSt_input.yml` file. 
 ```
 pfam: ['PF00076']
 cath: ['3.30.70.330']
@@ -75,8 +78,8 @@ cath: ['3.30.70.330']
 
 
 
-## Data files used in current version are as follows:
-**Files in Data directory can be downloaded as follows**:
+## Data files used in the current version are as follows:
+**Files in the Data directory can be downloaded as follows**:
 
 1. File used from Pfam database: [pdbmap.gz](http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/pdbmap.gz)
 
@@ -91,6 +94,9 @@ Pfam Version - 35.0 (Ver_Date - November-2021) [FTP site](http://ftp.ebi.ac.uk/p
 
 ## Reference
 ```
+Article -
+1. Hrishikesh Dhondge, Isaure Chauvot de Beauchêne, Marie-Dominique Devignes, CroMaSt: a workflow for assessing protein domain classification by cross-mapping of structural instances between domain databases and structural alignment, Bioinformatics Advances, Volume 3, Issue 1, 2023, vbad081, https://doi.org/10.1093/bioadv/vbad081
+
 Poster - 
 1. Hrishikesh Dhondge, Isaure Chauvot de Beauchêne, Marie-Dominique Devignes. CroMaSt: A workflow for domain family curation through cross-mapping of structural instances between protein domain databases. 21st European Conference on Computational Biology, Sep 2022, Sitges, Spain. ⟨hal-03789541⟩
 
