@@ -1,0 +1,8 @@
+pandas==1.5.2
+beautifulsoup4==4.12.2
+biopython==1.81
+cwltool==3.1.20211103193132
+cwlref-runner==1.0
+wget==3.2
+sh==2.0.4
+pyyaml==6.0
