@@ -1,5 +1,7 @@
-<a href="https://www.doi.org/10.1093/bioadv/vbad081" target="_parent"><img src="https://img.shields.io/badge/DOI-10.1093/bioadv/vbad081-blue?logo=doi" alt="DOI"/></a>
-<a href="https://workflowhub.eu/workflows/390" target="_parent"><img src="https://img.shields.io/badge/WorkflowHub-390-blue?logo=commonworkflowlanguage" alt="Workflow at WorkflowHub"/></a>
+[![DOI](https://img.shields.io/badge/DOI-10.1093/bioadv/vbad081-blue?logo=doi)](https://www.doi.org/10.1093/bioadv/vbad081)
+[![CWL](https://img.shields.io/badge/WorkflowHub-390-blue?logo=commonworkflowlanguage)](https://workflowhub.eu/workflows/390)
+[![GitLab](https://img.shields.io/badge/GitLab-CAPSID-blue?logo=GitLab)](https://gitlab.inria.fr/capsid.public_codes/CroMaSt)
+![PyLint]()
 
 # CroMaSt: A workflow for domain family curation through cross-mapping of structural instances between protein domain databases
 
@@ -18,7 +20,7 @@ Download and install conda (or Miniconda) and Kpax by following the instructions
 1. Clone the repository and change the directory
 
 ```
-git clone https://gitlab.inria.fr/capsid.public_codes/CroMaSt.git
+git clone https://github.com/HrishiDhondge/CroMaSt.git
 cd CroMaSt
 ```
 
